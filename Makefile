@@ -1,5 +1,5 @@
 build:
-	docker build -t aevea/kaniko .
+	docker build -t leantar/kaniko .
 
 run: build
 	docker run \
@@ -15,10 +15,10 @@ run: build
 		-e INPUT_CACHE_REGISTRY \
 		-e INPUT_STRIP_TAG_PREFIX \
 		-e INPUT_SKIP_UNCHANGED_DIGEST \
-	aevea/kaniko
+	leantar/kaniko
 
 shell: build
 	docker run \
 		-ti \
 		--entrypoint sh \
-	aevea/kaniko
+	leantar/kaniko
